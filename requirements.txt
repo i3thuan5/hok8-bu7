@@ -1,0 +1,12 @@
+Django==1.9.1
+django-cors-headers==1.1.0
+gunicorn==19.3.0
+htsengine==0.2.4
+kenlm==0.0.0
+libavwrapper==0.1.dev0
+lxml==3.5.0
+psycopg2==2.6.1
+PyYAML==3.11
+tai5-uan5-gian5-gi2-hok8-bu7==0.1.8
+tai5-uan5-gian5-gi2-kang1-ku7==0.5.16
+tai5-uan5-gian5-gi2-tsu1-liau7-khoo3==3.1.6
