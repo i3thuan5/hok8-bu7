@@ -85,16 +85,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-		'NAME': 'johndoe', # Linux's username
-		'USER': 'johndoe', # Linux's username
-		'PASSWORD': 'Taiwanese', # 剛輸入的密碼
-		'HOST': 'localhost',
-		'PORT': '',
-	}
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
