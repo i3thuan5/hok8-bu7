@@ -37,9 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     '臺灣言語資料庫',
-     '臺灣言語服務',
-	  'corsheaders',
+    '臺灣言語資料庫',
+    '臺灣言語服務',
+    'corsheaders',
+    '語音合成訓練範例-臺語教典',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,7 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-	 'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 )
 CORS_ORIGIN_REGEX_WHITELIST = ('^.*$', )
 CORS_ALLOW_CREDENTIALS = True
@@ -104,3 +105,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "資料庫影音檔案")
