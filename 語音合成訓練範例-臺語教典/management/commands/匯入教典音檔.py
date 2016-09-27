@@ -23,6 +23,14 @@ from django.core.management import call_command
 
 class Command(BaseCommand):
 
+    def add_arguments(self, parser):
+        parser.add_argument(
+            '匯入幾筆',
+            type=int,
+            default=100000,
+            help='試驗用，免一擺全匯'
+        )
+
     def handle(self, *args, **參數):
         call_command('顯示資料數量')
 
@@ -55,6 +63,7 @@ class Command(BaseCommand):
             '屬性': {'語者': '陳秀蓉'}
         }
         音檔目錄 = '語音合成訓練範例-臺語教典/wav'
+        匯入數量 = 0
         for 路徑 in sorted(listdir(音檔目錄)):
             音檔路徑 = join(音檔目錄, 路徑)
             if 音檔路徑.endswith('.wav'):
@@ -73,5 +82,9 @@ class Command(BaseCommand):
                     }
                     文本內容.update(公家內容)
                     影音.寫文本(文本內容)
+
+                    匯入數量 += 1
+                    if 匯入數量 == 參數['匯入幾筆']:
+                        break
 
         call_command('顯示資料數量')
