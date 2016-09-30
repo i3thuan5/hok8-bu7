@@ -25,7 +25,7 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            '匯入幾筆',
+            '--匯入幾筆',
             type=int,
             default=100000,
             help='試驗用，免一擺全匯'
