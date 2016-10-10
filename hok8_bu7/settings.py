@@ -21,6 +21,7 @@ from 臺灣言語工具.語音合成.決策樹仔問題.客家話決策樹仔 im
 from 臺灣言語工具.音標系統.官話.官話注音符號 import 官話注音符號
 from 臺灣言語工具.語音辨識.文本音值對照表.官話文本音值表 import 官話文本音值表
 from 臺灣言語工具.語音合成.決策樹仔問題.官話決策樹仔 import 官話決策樹仔
+from 臺灣言語工具.語音合成.閩南語變調 import 閩南語變調
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -120,6 +121,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "資料庫影音檔案")
 HOK8_BU7_SIAT4_TING7 = {
     '臺語': {
         '音標系統': 臺灣閩南語羅馬字拼音,
+        '變調規則': 閩南語變調,
         '文本音值表': 閩南語文本音值表,
         '決策樹仔': 閩南語決策樹仔,
     },
