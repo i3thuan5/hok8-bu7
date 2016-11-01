@@ -170,3 +170,9 @@ HOK8_BU7_SIAT4_TING7 = {
         '決策樹仔': 官話決策樹仔,
     },
 }
+
+try:
+    from hok8_bu7.local import SECRET_KEY, DEBUG, DATABASES
+except ImportError:
+    SECRET_KEY, DEBUG, DATABASES
+
