@@ -132,6 +132,12 @@ HOK8_BU7_SIAT4_TING7 = {
         '音韻規則': 閩南語音韻規則,
         '語音標仔轉換': 漢語語音標仔轉換,
         '決策樹仔': 閩南語決策樹仔,
+        '辨識設定': {
+              '腳本資料夾': os.path.join(BASE_DIR, 'kaldi/egs/taiwanese/s5c'),
+              '模型資料夾': 'tri5.2',
+              '圖資料夾': 'graph_sp',
+              '結果檔名': '7.0.0.txt',
+        },
     },
     '臺語': {
         '語族': '漢語',
@@ -178,6 +184,11 @@ for 族語 in [
         '語音標仔轉換': 南島語語音標仔轉換,
         '決策樹仔': 秀姑巒阿美語決策樹仔,
     }
+
+DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600
+# For better celery performance
+CELERY_IGNORE_RESULT = True
+CELERY_TIMEZONE = TIME_ZONE
 
 try:
     from hok8_bu7.local import SECRET_KEY, DEBUG, DATABASES
