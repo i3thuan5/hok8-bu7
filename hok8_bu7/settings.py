@@ -122,6 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "資料庫影音檔案")
+MEDIA_URL = "/資料庫影音檔案/"
 
 HOK8_BU7_SIAT4_TING7 = {
     '閩南語': {
@@ -185,7 +186,8 @@ for 族語 in [
         '決策樹仔': 秀姑巒阿美語決策樹仔,
     }
 
-DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600
+# 上傳的音檔上大1G，限制予nginx做
+DATA_UPLOAD_MAX_MEMORY_SIZE = 1073741824
 # For better celery performance
 CELERY_IGNORE_RESULT = True
 CELERY_TIMEZONE = TIME_ZONE
