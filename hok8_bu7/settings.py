@@ -55,7 +55,6 @@ INSTALLED_APPS = (
     '臺灣言語資料庫',
     '臺灣言語服務',
     'corsheaders',
-    '語音合成訓練範例-臺語教典',
 )
 
 MIDDLEWARE_CLASSES = (
