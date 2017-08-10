@@ -63,3 +63,10 @@ venv
 MANIFEST
 /node_modules/
 hok8_bu7/local.py
+/上線服務/
+/kaldi資料/
+/資料庫影音檔案/
+/.project
+/.pydevproject
+/db.sqlite3
+/原始檔案
