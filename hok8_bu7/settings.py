@@ -159,7 +159,7 @@ HOK8_BU7_SIAT4_TING7 = {
               '腳本資料夾': os.path.join(BASE_DIR, 'kaldi/egs/taiwanese/s5c'),
               '腳本': '服務來試nnet3.sh',
               '語料資料夾': 'data',
-              '模型資料夾': 'nnet3_clain',
+              '模型資料夾': 'nnet3_chain',
               '圖資料夾': 'graph_sp',
               '結果檔名': '7.0.0.txt',
         },
