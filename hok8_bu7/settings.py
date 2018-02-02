@@ -61,6 +61,7 @@ INSTALLED_APPS = (
     '臺灣言語服務',
     'corsheaders',
     '匯入到臺灣言語資料庫',
+    'TW01',
 )
 
 MIDDLEWARE_CLASSES = (
