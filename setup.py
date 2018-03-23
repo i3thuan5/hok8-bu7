@@ -23,5 +23,6 @@ setup(
         'tai5-uan5_gian5-gi2_hok8-bu7',
         'hue7jip8',
         'tw01',
+        'twisas',
     ],
 )

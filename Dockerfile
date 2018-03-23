@@ -14,7 +14,7 @@ RUN pip3 install --upgrade pip
 RUN locale-gen zh_TW.UTF-8
 ENV LC_ALL zh_TW.UTF-8
 
-RUN pip3 install tai5-uan5_gian5-gi2_hok8-bu7 hue7jip8 tw01
+RUN pip3 install tai5-uan5_gian5-gi2_hok8-bu7 hue7jip8 tw01 twisas
 
 WORKDIR /usr/local/hok8-bu7
 COPY . .
