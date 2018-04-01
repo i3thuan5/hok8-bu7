@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.5'
 
 services:
   gunicorn:
@@ -6,16 +6,13 @@ services:
     command: gunicorn hok8_bu7.wsgi -b 0.0.0.0:8000
     depends_on:
       - pyro4
-    restart: always
     ports:
       - "8000:8000"
   pyro4:
     build: .
     command: python3 -m Pyro4.naming -n 0.0.0.0
-    restart: always
   huan1ik8:
     build: .
     command: python3 manage.py 載入服務模型
     depends_on:
       - pyro4
-    restart: always
