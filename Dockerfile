@@ -14,11 +14,14 @@ RUN pip3 install --upgrade pip
 RUN locale-gen zh_TW.UTF-8
 ENV LC_ALL zh_TW.UTF-8
 
+RUN echo 20180401
 RUN pip3 install tai5-uan5_gian5-gi2_hok8-bu7 hue7jip8 tw01 twisas
 
 WORKDIR /usr/local/hok8-bu7
-RUN pip3 install --upgrade https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2_hok8-bu7/archive/%E7%BF%BB%E8%AD%AF%E6%94%B9%E9%81%8E%E6%B8%A1.zip
-RUN pip3 install --upgrade https://github.com/Taiwanese-Corpus/hue7jip8/archive/master.zip
+RUN pip3 install --upgrade https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2_hok8-bu7/archive/pyro4%E6%94%B9docker%E7%94%A8.zip
+RUN pip3 install --upgrade https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2_hok8-bu7/archive/pyro4%E6%94%B9docker%E7%94%A8.zip
+RUN pip3 install --upgrade https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2_hok8-bu7/archive/pyro4%E6%94%B9docker%E7%94%A8.zip
 
 COPY . .
+RUN echo PYRO4_TSU2_KI1 = \'pyro4\' >> hok8_bu7/settings.py
 RUN python3 manage.py migrate
