@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:16.04 as ki1tshoo2
 MAINTAINER sih4sing5hong5
 
 RUN apt-get update
@@ -25,3 +25,6 @@ COPY . .
 RUN echo PYRO4_TSU2_KI1 = \'pyro4\' >> hok8_bu7/settings.py
 RUN echo HUAN1_IK8_TSU2_KI1 = \'huan1ik8\' >> hok8_bu7/settings.py
 RUN python3 manage.py migrate
+
+FROM ki1tshoo2 as tsau2_huan1ik8
+RUN echo sui2

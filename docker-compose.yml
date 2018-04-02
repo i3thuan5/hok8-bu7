@@ -2,17 +2,23 @@ version: '3.5'
 
 services:
   gunicorn:
-    build: .
+    build:
+      context: .
+      target: ki1tshoo2
     command: gunicorn hok8_bu7.wsgi -b 0.0.0.0:8000
     depends_on:
       - pyro4
     ports:
       - "8000:8000"
   pyro4:
-    build: .
+    build:
+      context: .
+      target: ki1tshoo2
     command: python3 -m Pyro4.naming -n 0.0.0.0
   huan1ik8:
-    build: .
+    build:
+      context: .
+      target: tsau2_huan1ik8
     command: python3 manage.py 載入服務模型
     depends_on:
       - pyro4
