@@ -5,7 +5,7 @@ services:
     build:
       context: .
       target: ki1tshoo2
-    command: gunicorn hok8_bu7.wsgi -b 0.0.0.0:8000
+    command: gunicorn hok8_bu7.wsgi --log-level debug -b 0.0.0.0:8000
     depends_on:
       - pyro4
       - rabbitmq
