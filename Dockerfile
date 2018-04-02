@@ -22,9 +22,15 @@ RUN echo 0401:3
 RUN pip3 install --upgrade https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2_hok8-bu7/archive/pyro4%E6%94%B9docker%E7%94%A8.zip
 
 COPY . .
+# COPY 上線服務/服務資料 服務資料
 RUN echo PYRO4_TSU2_KI1 = \'pyro4\' >> hok8_bu7/settings.py
 RUN echo HUAN1_IK8_TSU2_KI1 = \'huan1ik8\' >> hok8_bu7/settings.py
+RUN echo PIAN7_SIK4_TSU2_KI1 = \'pian7sik4\' >> hok8_bu7/settings.py
+
 RUN python3 manage.py migrate
 
 FROM ki1tshoo2 as tsau2_huan1ik8
+RUN echo sui2
+
+FROM ki1tshoo2 as tsau2_pian7sik4
 RUN echo sui2

@@ -8,6 +8,7 @@ services:
     command: gunicorn hok8_bu7.wsgi -b 0.0.0.0:8000
     depends_on:
       - pyro4
+      - pian7sik4
     ports:
       - "8000:8000"
   pyro4:
@@ -22,3 +23,8 @@ services:
     command: python3 manage.py 載入服務模型
     depends_on:
       - pyro4
+  pian7sik4:
+    build:
+      context: .
+      target: tsau2_pian7sik4
+    command: celery -A hok8_bu7 worker -l info
