@@ -13,12 +13,14 @@ os.environ.setdefault(
 
 from django.conf import settings
 
-app = Celery(
-    'hok8_bu7',
-    broker='amqp://{}:5672//'.format(
-        getattr(settings, "PIAN7_SIK4_TSU2_KI1", 'localhost')
-    ),
-)
+try:
+    rabbitmq = 'amqp://ti1a2:gau5tsa2@{}:5672/hok8_bu7'.format(
+        settings.RABBIT_MQ_TSU2_KI1
+    )
+except AttributeError:
+    rabbitmq = None
+
+app = Celery('hok8_bu7', broker=rabbitmq)
 
 # Using a string here means the worker don't have to serialize
 # the configuration object to child processes.

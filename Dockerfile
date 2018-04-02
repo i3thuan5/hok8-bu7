@@ -25,7 +25,7 @@ COPY . .
 # COPY 上線服務/服務資料 服務資料
 RUN echo PYRO4_TSU2_KI1 = \'pyro4\' >> hok8_bu7/settings.py
 RUN echo HUAN1_IK8_TSU2_KI1 = \'huan1ik8\' >> hok8_bu7/settings.py
-RUN echo PIAN7_SIK4_TSU2_KI1 = \'pian7sik4\' >> hok8_bu7/settings.py
+RUN echo RABBIT_MQ_TSU2_KI1 = \'rabbitmq\' >> hok8_bu7/settings.py
 
 RUN python3 manage.py migrate
 

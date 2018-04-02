@@ -8,14 +8,9 @@ services:
     command: gunicorn hok8_bu7.wsgi -b 0.0.0.0:8000
     depends_on:
       - pyro4
-      - pian7sik4
+      - rabbitmq
     ports:
       - "8000:8000"
-  pyro4:
-    build:
-      context: .
-      target: ki1tshoo2
-    command: python3 -m Pyro4.naming -n 0.0.0.0
   huan1ik8:
     build:
       context: .
@@ -28,3 +23,16 @@ services:
       context: .
       target: tsau2_pian7sik4
     command: celery -A hok8_bu7 worker -l info
+    depends_on:
+      - rabbitmq
+  pyro4:
+    build:
+      context: .
+      target: ki1tshoo2
+    command: python3 -m Pyro4.naming -n 0.0.0.0
+  rabbitmq:
+    image: rabbitmq:3-management
+    environment: 
+      RABBITMQ_DEFAULT_USER: ti1a2
+      RABBITMQ_DEFAULT_PASS: gau5tsa2
+      RABBITMQ_DEFAULT_VHOST: hok8_bu7
