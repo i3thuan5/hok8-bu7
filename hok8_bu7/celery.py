@@ -1,17 +1,12 @@
-from __future__ import absolute_import, unicode_literals
-
-import os
-
-
 from celery import Celery
-
+from django.conf import settings
+import os
 
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault(
     'DJANGO_SETTINGS_MODULE', 'hok8_bu7.settings'
 )
 
-from django.conf import settings
 
 try:
     rabbitmq = 'amqp://ti1a2:gau5tsa2@{}:5672/hok8_bu7'.format(
