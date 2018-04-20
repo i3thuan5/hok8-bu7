@@ -30,7 +30,8 @@ RUN echo RABBIT_MQ_TSU2_KI1 = \'rabbitmq\' >> hok8_bu7/settings.py
 RUN python3 manage.py migrate
 
 FROM ki1tshoo2 as tsau2_huan1ik8
-RUN echo sui2
+RUN echo 'from 臺灣言語工具.翻譯.摩西工具.安裝摩西翻譯佮相關程式 import 安裝摩西翻譯佮相關程式; 安裝摩西翻譯佮相關程式.安裝moses(編譯CPU數=4)' | python3
+RUN pip3 install --upgrade tai5-uan5_gian5-gi2_kang1-ku7
 
 FROM ki1tshoo2 as tsau2_pian7sik4
 RUN echo sui2
