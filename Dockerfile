@@ -11,6 +11,7 @@ RUN apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
 
 # Switch locale
+RUN apt-get install -y locales
 RUN locale-gen zh_TW.UTF-8
 ENV LC_ALL zh_TW.UTF-8
 
@@ -29,6 +30,7 @@ RUN pip3 install --upgrade https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2
 RUN echo PYRO4_TSU2_KI1 = \'pyro4\' >> hok8_bu7/settings.py
 RUN echo HUAN1_IK8_TSU2_KI1 = \'huan1ik8\' >> hok8_bu7/settings.py
 RUN echo RABBIT_MQ_TSU2_KI1 = \'rabbitmq\' >> hok8_bu7/settings.py
+RUN pip3 install --upgrade hue7jip8
 
 
 FROM ki1tshoo2 as tsau2_wsgi
