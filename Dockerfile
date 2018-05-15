@@ -25,4 +25,6 @@ FROM ki1tshoo2 as tsau2_huan1ik8
 COPY 服務資料 服務資料
 
 FROM ki1tshoo2 as tsau2_pian7sik4
-RUN echo sui2
+COPY --from=gotw/kaldi-ihc /usr/local/kaldi /usr/local/kaldi
+COPY exp /usr/local/kaldi/egs/taiwanese/s5c
+
