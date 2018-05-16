@@ -242,6 +242,15 @@ CELERY_IGNORE_RESULT = True
 CELERY_TIMEZONE = TIME_ZONE
 
 try:
-    from hok8_bu7.local import SECRET_KEY, DEBUG, DATABASES
+    from hok8_bu7.local import SECRET_KEY
 except ImportError:
-    SECRET_KEY, DEBUG, DATABASES
+    SECRET_KEY
+try:
+    from hok8_bu7.local import DEBUG
+except ImportError:
+    DEBUG
+try:
+    from hok8_bu7.local import DATABASES
+except ImportError:
+    DATABASES
+
