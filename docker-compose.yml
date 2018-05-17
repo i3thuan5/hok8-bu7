@@ -9,7 +9,7 @@ services:
     command: gunicorn hok8_bu7.wsgi --log-level debug -b 0.0.0.0:8000
     volumes:
       - sqlite3:/usr/local/sqlite3
-      - im1tong2:/usr/local/hok8_bu7/資料庫影音檔案
+      - im1tong2:/usr/local/hok8-bu7/資料庫影音檔案
     depends_on:
       - pyro4
       - rabbitmq
@@ -32,7 +32,7 @@ services:
     command: celery -A hok8_bu7 worker -l info
     volumes:
       - sqlite3:/usr/local/sqlite3
-      - im1tong2:/usr/local/hok8_bu7/資料庫影音檔案
+      - im1tong2:/usr/local/hok8-bu7/資料庫影音檔案
     depends_on:
       - rabbitmq
   pyro4:
