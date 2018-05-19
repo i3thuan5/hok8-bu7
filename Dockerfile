@@ -32,7 +32,7 @@ COPY 服務資料 服務資料
 
 FROM ki1tshoo2 as tsau2_pian7sik4
 COPY --from=gotw/kaldi-ihc /usr/local/kaldi /usr/local/kaldi
-COPY exp /usr/local/kaldi/egs/taiwanese/s5c
+COPY exp /usr/local/kaldi/egs/taiwanese/s5c/exp
 RUN apt-get install -y libatlas-base-dev
 RUN ln -s /usr/local/kaldi kaldi
 
