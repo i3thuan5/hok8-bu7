@@ -25,6 +25,7 @@ services:
     command: python3 manage.py 載入服務模型
     depends_on:
       - pyro4
+    restart: always
   pian7sik4:
     build:
       context: .
