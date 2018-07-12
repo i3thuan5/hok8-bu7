@@ -24,6 +24,7 @@ services:
       target: ki1tshoo2
     command: python3 manage.py 載入服務模型
     volumes:
+      - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
       - sqlite3:/usr/local/sqlite3
     depends_on:
       - pyro4
@@ -34,6 +35,7 @@ services:
       target: tsau2_pian7sik4
     command: celery -A hok8_bu7 worker -l info
     volumes:
+      - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
       - sqlite3:/usr/local/sqlite3
       - im1tong2:/usr/local/hok8-bu7/資料庫影音檔案
     depends_on:
