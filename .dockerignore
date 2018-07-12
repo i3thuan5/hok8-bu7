@@ -69,6 +69,7 @@ MANIFEST
 /.pydevproject
 /db.sqlite3
 /原始檔案
+/服務資料
 /.git
 /Dockerfile
 /docker-compose.yml
