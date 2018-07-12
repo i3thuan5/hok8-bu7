@@ -53,8 +53,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         '決策樹仔': 官話決策樹仔,
     },
 }
-HOK8_BU7_SIAT4_TING7['臺語'] = HOK8_BU7_SIAT4_TING7['台語']
-HOK8_BU7_SIAT4_TING7['閩南語'] = HOK8_BU7_SIAT4_TING7['台語']
+服務設定['臺語'] = 服務設定['台語']
+服務設定['閩南語'] = 服務設定['台語']
  
 for 客語 in ['四縣腔', '海陸腔', '大埔腔', '饒平腔', '詔安腔', '南四縣腔']:
     服務設定[客語] = {
