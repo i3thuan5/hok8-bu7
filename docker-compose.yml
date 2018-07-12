@@ -25,7 +25,6 @@ services:
     command: python3 manage.py 載入服務模型
     volumes:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
-      - sqlite3:/usr/local/sqlite3
     depends_on:
       - pyro4
     restart: always
