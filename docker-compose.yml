@@ -5,8 +5,11 @@ services:
     build:
       context: .
       target: tsau2_wsgi
-#      target: ki1tshoo2
     command: gunicorn hok8_bu7.wsgi --log-level debug -b 0.0.0.0:8000
+    volumes:
+      - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
+      - sqlite3:/usr/local/hok8-bu7/sqlite3
+      - im1tong2:/usr/local/hok8-bu7/資料庫影音檔案
     depends_on:
       - pyro4
       - rabbitmq
@@ -18,15 +21,22 @@ services:
   huan1ik8:
     build:
       context: .
-      target: tsau2_huan1ik8
+      target: ki1tshoo2
     command: python3 manage.py 載入服務模型
+    volumes:
+      - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
     depends_on:
       - pyro4
+    restart: always
   pian7sik4:
     build:
       context: .
       target: tsau2_pian7sik4
     command: celery -A hok8_bu7 worker -l info
+    volumes:
+      - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
+      - sqlite3:/usr/local/sqlite3
+      - im1tong2:/usr/local/hok8-bu7/資料庫影音檔案
     depends_on:
       - rabbitmq
   pyro4:
@@ -40,3 +50,8 @@ services:
       RABBITMQ_DEFAULT_USER: ti1a2
       RABBITMQ_DEFAULT_PASS: gau5tsa2
       RABBITMQ_DEFAULT_VHOST: hok8_bu7
+
+volumes:
+  sqlite3:
+  im1tong2:
+ 
