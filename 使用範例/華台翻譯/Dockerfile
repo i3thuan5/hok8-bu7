@@ -20,5 +20,6 @@ RUN python3 manage.py 詞彙分級
 RUN python3 manage.py 外文用國教院斷詞
 RUN python3 manage.py 台文用語料斷詞 --欲參考 教典例句 詞彙分級 --欲斷詞 icorpus臺華平行新聞語料庫 TGB通訊
 
-RUN python3 manage.py 訓練Moses翻譯做外文 台語
-#/usr/local/lib/python3.5/dist-packages/外部程式/mosesdecoder/bin/moses -f 服務資料/台語/翻譯做外文模型/model/moses.ini
+
+RUN python3 manage.py 訓練Moses 台語
+#/usr/local/lib/python3.5/dist-packages/外部程式/mosesdecoder/bin/moses -f 服務資料/臺語/翻譯做母語模型/model/moses.ini
