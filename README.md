@@ -5,9 +5,11 @@
 詳細說明可看[wiki](https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2_hok8-bu7/wiki)。
 
 ## 使用
+- 安裝 [docker](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
+- 安裝 [docker-compose](https://docs.docker.com/compose/install/)
+- 設定docker權限`sudo usermod -aG docker $USER`
 ```
-docker build -t hok8bu7 .
-docker run -p 8000:8000 su5-sing3 python3 manage.py runserver 0.0.0.0:8000
+docker-compose up
 ```
 
 ## 授權
