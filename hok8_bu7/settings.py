@@ -120,7 +120,7 @@ try:
 except ImportError:
     pass
 else:
-    INSTALLED_APPS += ['匯入']
+    INSTALLED_APPS += ('匯入',)
 
 try:
     import TW01
@@ -128,7 +128,7 @@ try:
 except ImportError:
     pass
 else:
-    INSTALLED_APPS += ['TW01']
+    INSTALLED_APPS += ('TW01',)
 
 try:
     import twisas
@@ -136,7 +136,7 @@ try:
 except ImportError:
     pass
 else:
-    INSTALLED_APPS += ['twisas']
+    INSTALLED_APPS += ('twisas',)
 
 
 try:
