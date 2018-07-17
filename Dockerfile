@@ -23,7 +23,7 @@ RUN python3 manage.py migrate
 EXPOSE 8000
 
 FROM ki1tshoo2 as tsau2_pian7sik4
-COPY --from=gotw/kaldi-ihc /usr/local/kaldi /usr/local/kaldi
+COPY --from=i3thuan5/hok8-bu7-kaldi /usr/local/kaldi /usr/local/kaldi
 COPY exp /usr/local/kaldi/egs/taiwanese/s5c/exp
 
 RUN apt-get update && apt-get install -y libatlas-base-dev sox libav-tools
