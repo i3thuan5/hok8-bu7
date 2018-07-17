@@ -1,13 +1,15 @@
-# 服務範例
+# Ho̍k-bū
 [![Build Status](https://travis-ci.org/i3thuan5/hok8-bu7.svg?branch=master)](https://travis-ci.org/i3thuan5/hok8-bu7)
 
 本專案是[臺灣言語服務](https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2_hok8-bu7)的範例，設定檔已設置完成，方便大家直接使用。
 詳細說明可看[wiki](https://github.com/sih4sing5hong5/tai5-uan5_gian5-gi2_hok8-bu7/wiki)。
 
 ## 使用
+- 安裝 [docker](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
+- 安裝 [docker-compose](https://docs.docker.com/compose/install/)
+- 設定docker權限`sudo usermod -aG docker $USER`
 ```
-docker build -t hok8bu7 .
-docker run -p 8000:8000 su5-sing3 python3 manage.py runserver 0.0.0.0:8000
+docker-compose up
 ```
 
 ## 授權
