@@ -1,7 +1,7 @@
 FROM i3thuan5/tai5-uan5_gian5-gi2_kang1-ku7:latest as ki1tshoo2
 MAINTAINER i3thuan5
 
-RUN pip3 install tai5-uan5_gian5-gi2_hok8-bu7 hue7jip8 tw01 twisas
+RUN pip3 install tai5-uan5_gian5-gi2_hok8-bu7
 
 WORKDIR /usr/local/
 RUN git clone https://github.com/i3thuan5/hok8-bu7.git

@@ -39,9 +39,6 @@ INSTALLED_APPS = (
     '臺灣言語資料庫',
     '臺灣言語服務',
     'corsheaders',
-    '匯入',
-    'TW01',
-    'twisas',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -116,6 +113,30 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 1073741824
 # For better celery performance
 CELERY_IGNORE_RESULT = True
 CELERY_TIMEZONE = TIME_ZONE
+
+try:
+    import 匯入
+    匯入
+except ImportError:
+    pass
+else:
+    INSTALLED_APPS += ('匯入',)
+
+try:
+    import TW01
+    TW01
+except ImportError:
+    pass
+else:
+    INSTALLED_APPS += ('TW01',)
+
+try:
+    import twisas
+    twisas
+except ImportError:
+    pass
+else:
+    INSTALLED_APPS += ('twisas',)
 
 
 try:
