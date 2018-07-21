@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   gunicorn:
-    images: i3thuan5/hok8-bu7
+    image: i3thuan5/hok8-bu7
     command: gunicorn hok8_bu7.wsgi --log-level debug -b 0.0.0.0:8000
     volumes:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
@@ -14,13 +14,14 @@ services:
       VIRTUAL_HOST: "xn--lhrz38b.xn--v0qr21b.xn--kpry57d"
       VIRTUAL_PORT: 8000
   huan1ik8:
-    images: i3thuan5/hok8-bu7
+    image: i3thuan5/hok8-bu7
     command: python3 manage.py 載入服務模型
     volumes:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
+      - ./服務資料:/usr/local/hok8-bu7/服務資料
     depends_on:
       - pyro4
     restart: always
   pyro4:
-    images: i3thuan5/hok8-bu7
+    image: i3thuan5/hok8-bu7
     command: python3 -m Pyro4.naming -n 0.0.0.0
