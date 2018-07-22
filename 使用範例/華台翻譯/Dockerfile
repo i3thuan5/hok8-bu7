@@ -25,4 +25,4 @@ RUN python3 manage.py 台文用語料斷詞 --欲參考 教典例句 詞彙分�
 RUN python3 manage.py 訓練Moses 台語
 
 EXPOSE 8080
-CMD /usr/local/lib/python3.5/dist-packages/外部程式/mosesdecoder/bin/mosesserver -f 服務資料/臺語/翻譯做母語模型/model/moses.ini
+CMD /usr/local/lib/python3.5/dist-packages/外部程式/mosesdecoder/bin/mosesserver -f 服務資料/台語/翻譯做母語模型/model/moses.ini
