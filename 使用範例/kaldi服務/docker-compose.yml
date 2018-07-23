@@ -35,6 +35,7 @@ services:
     command: celery -A hok8_bu7 worker -l info
     volumes:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
+      - ./exp:/usr/local/kaldi/egs/taiwanese/s5c/exp
       - sqlite3:/usr/local/sqlite3
       - im1tong2:/usr/local/hok8-bu7/資料庫影音檔案
     depends_on:
