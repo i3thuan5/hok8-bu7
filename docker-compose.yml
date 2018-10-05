@@ -60,7 +60,7 @@ services:
       RABBITMQ_DEFAULT_VHOST: hok8_bu7
     restart: always
   kaldi:
-    image: sih4sing5hong5/pianho-e-kaldi
+    image: sih4sing5hong5/pianho-e-kaldi:16.04
     command: wget https://github.com/sih4sing5hong5/kaldi/raw/aca9eca6a3429672a44a913d7f0b5d7594a69ad0/egs/taiwanese/s5c/%E6%9C%8D%E5%8B%99%E4%BE%86%E8%A9%A6nnet3.sh -O /usr/local/kaldi/egs/taiwanese/s5c/服務來試nnet3.sh
     volumes:
       - kaldi:/usr/local/kaldi
