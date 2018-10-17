@@ -1,0 +1,51 @@
+version: '3.5'
+
+services:
+  gunicorn:
+    image: i3thuan5/hok8-bu7
+    command: gunicorn hok8_bu7.wsgi --log-level debug -b 0.0.0.0:8000
+    volumes:
+      - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
+      - sqlite3:/usr/local/hok8-bu7/sqlite3
+      - im1tong2:/usr/local/hok8-bu7/資料庫影音檔案
+    depends_on:
+      - pyro4
+      - rabbitmq
+    expose:
+      - "8000"
+    environment:
+      VIRTUAL_HOST: "xn--lhrz38b.xn--v0qr21b.xn--kpry57d"
+      VIRTUAL_PORT: 8000
+  huan1ik8:
+    image: i3thuan5/hok8-bu7
+    command: python3 manage.py 載入服務模型
+    volumes:
+      - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
+      - ./服務資料:/usr/local/hok8-bu7/服務資料
+    depends_on:
+      - pyro4
+    restart: always
+  pian7sik4:
+    image: i3thuan5/hok8-bu7:kaldi
+    command: celery -A hok8_bu7 worker -l info
+    volumes:
+      - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
+      - ./exp:/usr/local/kaldi/egs/taiwanese/s5c/exp
+      - sqlite3:/usr/local/sqlite3
+      - im1tong2:/usr/local/hok8-bu7/資料庫影音檔案
+    depends_on:
+      - rabbitmq
+  pyro4:
+    image: i3thuan5/hok8-bu7
+    command: python3 -m Pyro4.naming -n 0.0.0.0
+  rabbitmq:
+    image: rabbitmq:3-management
+    environment: 
+      RABBITMQ_DEFAULT_USER: ti1a2
+      RABBITMQ_DEFAULT_PASS: gau5tsa2
+      RABBITMQ_DEFAULT_VHOST: hok8_bu7
+
+volumes:
+  sqlite3:
+  im1tong2:
+ 
