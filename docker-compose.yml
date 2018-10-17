@@ -2,9 +2,7 @@ version: '3.5'
 
 services:
   gunicorn:
-    build:
-      context: .
-      target: ki1tshoo2
+    image: i3thuan5/hok8-bu7:latest
     command: gunicorn hok8_bu7.wsgi --log-level debug -b 0.0.0.0:8000
     volumes:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
@@ -14,7 +12,7 @@ services:
       - pyro4
       - rabbitmq
     ports:
-            - "8000:8000"
+      - "8000:8000"
     expose:
       - "8000"
     environment:
@@ -23,9 +21,7 @@ services:
       VIRTUAL_PORT: 8000
     restart: always
   huan1ik8:
-    build:
-      context: .
-      target: ki1tshoo2
+    image: i3thuan5/hok8-bu7:latest
     command: python3 manage.py 載入服務模型
     volumes:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
@@ -33,9 +29,7 @@ services:
       - pyro4
     restart: always
   pian7sik4:
-    build:
-      context: .
-      target: tsau2_pian7sik4
+    build: .
     command: celery -A hok8_bu7 worker -l info --concurrency=1
     volumes:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
@@ -47,9 +41,7 @@ services:
       - rabbitmq
     restart: always
   pyro4:
-    build:
-      context: .
-      target: ki1tshoo2
+    image: i3thuan5/hok8-bu7:latest
     command: python3 -m Pyro4.naming -n 0.0.0.0
     restart: always
   rabbitmq:
