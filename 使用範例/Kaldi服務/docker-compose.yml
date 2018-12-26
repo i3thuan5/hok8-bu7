@@ -13,8 +13,9 @@ services:
       - rabbitmq
     ports:
       - "8000:8000"
-    expose:
-      - "8000"
+    networks:
+      - default
+      - nginx-bridge
     environment:
       VIRTUAL_HOST: "xn--lhrz38b.xn--v0qr21b.xn--kpry57d"
       VIRTUAL_PORT: 8000
@@ -55,4 +56,8 @@ volumes:
   sqlite3:
   im1tong2:
   kaldi:
- 
+
+networks:
+  nginx-bridge:
+    external: true
+
