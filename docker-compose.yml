@@ -8,14 +8,17 @@ services:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
     depends_on:
       - pyro4
-    ports:
-      - "8000:8000"
+#    ports:
+#      - "8000:8000"
     networks:
       - default
       - nginx-bridge
+    expose:
+      - 8000
     environment:
       VIRTUAL_HOST: "xn--lhrz38b.xn--v0qr21b.xn--kpry57d"
       VIRTUAL_PORT: 8000
+    restart: always
   huan1ik8:
     image: i3thuan5/hok8-bu7
     command: python3 manage.py 載入服務模型
@@ -28,7 +31,9 @@ services:
   pyro4:
     image: i3thuan5/hok8-bu7
     command: python3 -m Pyro4.naming -n 0.0.0.0
+    restart: always
 
 networks:
   nginx-bridge:
     external: true
+
