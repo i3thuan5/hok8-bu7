@@ -1,6 +1,6 @@
-ARG BUNPUN=i3thuan5/tauphahji_kehsik
+ARG KEHSIK=i3thuan5/tauphahji_kehsik
 
-FROM ${BUNPUN} as kehsik
+FROM ${KEHSIK} as kehsik
 
 FROM i3thuan5/hok8-bu7
 MAINTAINER i3thuan5
