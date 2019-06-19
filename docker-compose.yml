@@ -8,8 +8,8 @@ services:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
     depends_on:
       - pyro4
-#    ports:
-#      - "8000:8000"
+    ports:
+      - "8000:8000"
     networks:
       - default
       - nginx-bridge
@@ -30,6 +30,13 @@ services:
     depends_on:
       - pyro4
     restart: always
+  taigi-hanlo:
+    build: 使用範例/台語標漢羅
+    volumes:
+      - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
+    depends_on:
+      - pyro4
+    restart: always
   pyro4:
     image: i3thuan5/hok8-bu7
     command: python3 -m Pyro4.naming -n 0.0.0.0
@@ -38,4 +45,3 @@ services:
 networks:
   nginx-bridge:
     external: true
-
