@@ -1,7 +1,11 @@
+ARG BUNPUN=i3thuan5/tauphahji_bunpun
+
+FROM ${BUNPUN} as bunpun
+
 FROM i3thuan5/hok8-bu7
 MAINTAINER i3thuan5
 
-COPY --from=i3thuan5/tauphahji_bunpun \
+COPY --from=bunpun \
   /usr/local/hok8-bu7/su.txt \
   /usr/local/hok8-bu7/語言模型資料夾/語言模型.lm \
   ./服務資料/台語/標漢羅/
