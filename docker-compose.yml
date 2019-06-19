@@ -18,6 +18,8 @@ services:
     environment:
       VIRTUAL_HOST: "xn--lhrz38b.xn--v0qr21b.xn--kpry57d"
       VIRTUAL_PORT: 8000
+      LETSENCRYPT_HOST: "xn--lhrz38b.xn--v0qr21b.xn--kpry57d"
+      LETSENCRYPT_EMAIL: "ithuan@xn--v0qr21b.xn--kpry57d"
     restart: always
   huan1ik8:
     image: i3thuan5/hok8-bu7
