@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   gunicorn:
-    image: i3thuan5/hok8-bu7
+    build: 使用範例/暫時/
     command: gunicorn hok8_bu7.wsgi --log-level debug -b 0.0.0.0:8000
     volumes:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
