@@ -3,21 +3,20 @@ version: '3.5'
 services:
   gunicorn:
     image: i3thuan5/hok8-bu7
-    command: gunicorn hok8_bu7.wsgi --log-level debug -b 0.0.0.0:8000
+    command: gunicorn hok8_bu7.wsgi --log-level debug -b 0.0.0.0:8000  --workers 10 --thread 3
     volumes:
       - ./hok8_bu7/local.py:/usr/local/hok8-bu7/hok8_bu7/local.py
     depends_on:
       - pyro4
-#    ports:
-#      - "8000:8000"
     networks:
       - default
       - nginx-bridge
     expose:
       - 8000
     environment:
-      VIRTUAL_HOST: "xn--lhrz38b.xn--v0qr21b.xn--kpry57d"
-      VIRTUAL_PORT: 8000
+      VIRTUAL_HOST: "hts.ithuan.tw"
+      LETSENCRYPT_HOST: "hts.ithuan.tw"
+      LETSENCRYPT_EMAIL: "ithuan@ithuan.tw"
     restart: always
   huan1ik8:
     image: i3thuan5/hok8-bu7
